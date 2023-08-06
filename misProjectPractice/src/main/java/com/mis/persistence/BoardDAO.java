@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mis.domain.BoardVO;
 import com.mis.domain.Criteria;
+import com.mis.domain.SearchCriteria;
 
 public interface BoardDAO {
 	
@@ -17,8 +18,15 @@ public interface BoardDAO {
 
 	public List<BoardVO> listAll() throws Exception;
 	
+	//기본 페이징 목록 기능
+	
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 
 	public int listCountCriteria(Criteria cri) throws Exception;
+	
+	// 검색 기능 + 페이징 기능
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+
+	public int listSearchCountCriteria(SearchCriteria cri) throws Exception; 
 	
 }
